@@ -42,5 +42,8 @@ func ReceiveWish(c *fiber.Ctx) error {
 
 	wish := wishs[n]
 	fmt.Printf("%+v\n", wish)
-	return c.Status(fiber.StatusOK).JSON(fiber.Map{"result": wish})
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"message": "Success",
+		"data":    wish,
+	})
 }
