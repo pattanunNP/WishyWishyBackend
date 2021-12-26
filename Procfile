@@ -1,1 +1,1 @@
-web: heroku
+web: github.com/pattanunNP/wishbackend
