@@ -1,1 +1,1 @@
-web: github.com/pattanunNP/wishbackend
+web: wishbackend
