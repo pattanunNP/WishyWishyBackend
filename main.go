@@ -21,6 +21,7 @@ func main() {
 
 	// Verify if heroku provided the port or not
 	port := os.Getenv("PORT")
+
 	// If port is not provided, use default port
 
 	fmt.Printf("Server started on port 🚀 %s\n", port)

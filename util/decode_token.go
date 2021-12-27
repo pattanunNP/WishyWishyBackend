@@ -44,6 +44,8 @@ func Decode(Token string) (*models.LineProfile, error) {
 			panic(err)
 		}
 		body, err := ioutil.ReadAll(res.Body)
+
+		fmt.Println(string(body))
 		var profile models.LineProfile
 		err = json.Unmarshal(body, &profile)
 		if err != nil {

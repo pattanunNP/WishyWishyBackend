@@ -14,6 +14,7 @@ import (
 func GetUserWish(c *fiber.Ctx) error {
 
 	user_id := c.Locals("profile").(*models.LineProfile).UserID
+	fmt.Printf("user_id: %s\n", user_id)
 
 	db := database.MI.DB.Collection("users")
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)

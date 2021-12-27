@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/pattanunNP/wishbackend/util"
@@ -12,7 +13,7 @@ func Authorization() fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		authorization := c.Get("Authorization")
 		token := strings.Split(authorization, "Bearer")
-		// fmt.Println(token)
+		fmt.Println(token)
 
 		if len(token[1]) <= 1 {
 			return c.Status(401).JSON(fiber.Map{"message": "Missing or malformed JWT"})
