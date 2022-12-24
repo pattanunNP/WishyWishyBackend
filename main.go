@@ -19,13 +19,23 @@ func main() {
 
 	router.SetupRoutes(app)
 
-	// Verify if heroku provided the port or not
-	port := os.Getenv("PORT")
-
 	// If port is not provided, use default port
 
-	fmt.Printf("Server started on port 🚀 %s\n", port)
+	if os.Getenv("PORT") != "" {
+		port := os.Getenv("PORT")
+		fmt.Printf("Server started on port 🚀 %s\n", port)
 
-	log.Fatal(app.Listen(":8080"))
+		log.Fatal(app.Listen(":"+port))
+	
+	}else{
+		port:= 8080
+		fmt.Printf("Server started on port 🚀 %d\n", port)
+
+		log.Fatal(app.Listen(fmt.Sprintf(":%d",port)))
+	
+	}
+
+
+
 
 }
