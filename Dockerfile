@@ -10,7 +10,7 @@ RUN go build -o server .
 
 FROM golang:alpine AS server
 
-ENV PORT=8080
+
 WORKDIR /app
 COPY --from=build /src/app .
 # COPY --from=build /src/app/server .
