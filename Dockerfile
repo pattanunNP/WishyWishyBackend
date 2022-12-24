@@ -15,6 +15,6 @@ WORKDIR /app
 COPY --from=build /src/app .
 # COPY --from=build /src/app/server .
 
-EXPOSE 8080
+EXPOSE 8080 443
 
-CMD ./server
+CMD ./server 

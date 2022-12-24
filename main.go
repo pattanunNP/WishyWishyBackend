@@ -26,6 +26,6 @@ func main() {
 
 	fmt.Printf("Server started on port 🚀 %s\n", port)
 
-	log.Fatal(app.Listen(":" + port))
+	log.Fatal(app.Listen(":8080"))
 
 }
