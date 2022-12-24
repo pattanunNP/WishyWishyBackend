@@ -21,21 +21,11 @@ func main() {
 
 	// If port is not provided, use default port
 
-	if os.Getenv("PORT") != "" {
-		port := os.Getenv("PORT")
-		fmt.Printf("Server started on port 🚀 %s\n", port)
-
-		log.Fatal(app.Listen(":"+port))
-	
-	}else{
-		port:= 8080
-		fmt.Printf("Server started on port 🚀 %d\n", port)
-
-		log.Fatal(app.Listen(fmt.Sprintf(":%d",port)))
-	
+	port := os.Getenv("PORT")
+	if port == "" {
+			port = "8080"
 	}
-
-
-
+	fmt.Printf("Server started on port 🚀 %s\n", port)
+	log.Fatal(app.Listen(fmt.Sprintf(":%s", port)))
 
 }
