@@ -54,7 +54,7 @@ jobs:
             NODE_ENV=${{ env.NODE_ENV }}
             GOOGLE_CLOUD_PROJECT=${{ env.GOOGLE_CLOUD_PROJECT }}
             MONGODB_URI=${{ env.MONGODB_URI }}
-            PORT=8080
+     
        
 
       - name: Show Output
