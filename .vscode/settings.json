@@ -1,0 +1,6 @@
+{
+	"go.inferGopath": false,
+	"yaml.schemas": {
+		"https://json.schemastore.org/github-workflow.json": "file:///Users/arm/code/Projects/JustWannaDo/wishbackend/.github/workflows/deploy.yml"
+	}
+}

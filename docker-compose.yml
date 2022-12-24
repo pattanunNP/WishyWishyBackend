@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+
+  wishy-backend:
+    build:
+      context: .
+    image: wishy-backend
+   
+ 
