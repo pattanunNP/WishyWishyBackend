@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/pattanunNP/wishbackend/database"
-	"github.com/pattanunNP/wishbackend/models"
+	"github.com/pattanunNP/WishyWishyBackend/database"
+	"github.com/pattanunNP/WishyWishyBackend/models"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -36,7 +36,7 @@ func SaveWish(c *fiber.Ctx) error {
 	result, err := collection.UpdateOne(ctx, filter, change, opts)
 
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 	fmt.Println(&result)
 

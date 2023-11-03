@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/pattanunNP/wishbackend/models"
+	"github.com/pattanunNP/WishyWishyBackend/models"
 )
 
 func Decode(Token string) (*models.LineProfile, error) {
@@ -18,12 +18,12 @@ func Decode(Token string) (*models.LineProfile, error) {
 	res, err := http.Get(endpoint)
 
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 
 	}
 	body, err := ioutil.ReadAll(res.Body)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 	fmt.Println(string(body))
 
@@ -32,7 +32,7 @@ func Decode(Token string) (*models.LineProfile, error) {
 		client := http.Client{}
 		req, err := http.NewRequest("GET", endpoint, nil)
 		if err != nil {
-			panic(err)
+			fmt.Println(err)
 		}
 
 		token := fmt.Sprintf("Bearer %s", Token[1:])
@@ -41,7 +41,7 @@ func Decode(Token string) (*models.LineProfile, error) {
 		res, err := client.Do(req)
 		if err != nil {
 
-			panic(err)
+			fmt.Println(err)
 		}
 		body, err := ioutil.ReadAll(res.Body)
 
@@ -49,7 +49,7 @@ func Decode(Token string) (*models.LineProfile, error) {
 		var profile models.LineProfile
 		err = json.Unmarshal(body, &profile)
 		if err != nil {
-			panic(err)
+			fmt.Println(err)
 		}
 		return &profile, nil
 	} else if res.StatusCode == 400 {

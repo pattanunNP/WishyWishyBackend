@@ -10,8 +10,8 @@ import (
 	"github.com/google/uuid"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/pattanunNP/wishbackend/database"
-	"github.com/pattanunNP/wishbackend/models"
+	"github.com/pattanunNP/WishyWishyBackend/database"
+	"github.com/pattanunNP/WishyWishyBackend/models"
 )
 
 func Createwish(c *fiber.Ctx) error {
@@ -55,7 +55,7 @@ func Createwish(c *fiber.Ctx) error {
 	})
 	fmt.Println(result)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 
 	return c.Status(fiber.StatusCreated).JSON(fiber.Map{

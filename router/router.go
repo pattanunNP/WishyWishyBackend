@@ -2,8 +2,8 @@ package router
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/pattanunNP/wishbackend/handler"
-	"github.com/pattanunNP/wishbackend/middleware"
+	"github.com/pattanunNP/WishyWishyBackend/handler"
+	"github.com/pattanunNP/WishyWishyBackend/middleware"
 )
 
 func SetupRoutes(app *fiber.App) {

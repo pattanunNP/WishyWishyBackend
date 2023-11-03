@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/pattanunNP/wishbackend/config"
+	"github.com/pattanunNP/WishyWishyBackend/config"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )

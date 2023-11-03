@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/pattanunNP/wishbackend/database"
-	"github.com/pattanunNP/wishbackend/models"
+	"github.com/pattanunNP/WishyWishyBackend/database"
+	"github.com/pattanunNP/WishyWishyBackend/models"
 	"go.mongodb.org/mongo-driver/bson"
 )
 
@@ -35,14 +35,14 @@ func GetUserWish(c *fiber.Ctx) error {
 
 	cursor, err := db.Aggregate(ctx, Pipeline)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 	var results []bson.M
 	if err = cursor.All(ctx, &results); err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 	if err := cursor.Close(ctx); err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 
 	fmt.Println(results)

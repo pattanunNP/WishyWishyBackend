@@ -7,8 +7,8 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
-	"github.com/pattanunNP/wishbackend/database"
-	"github.com/pattanunNP/wishbackend/router"
+	"github.com/pattanunNP/WishyWishyBackend/database"
+	"github.com/pattanunNP/WishyWishyBackend/router"
 )
 
 func main() {

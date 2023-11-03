@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/pattanunNP/wishbackend/database"
+	"github.com/pattanunNP/WishyWishyBackend/database"
 
-	"github.com/pattanunNP/wishbackend/models"
+	"github.com/pattanunNP/WishyWishyBackend/models"
 	"go.mongodb.org/mongo-driver/bson"
 )
 
@@ -21,7 +21,7 @@ func ReceiveWish(c *fiber.Ctx) error {
 
 	cur, err := db.Find(ctx, bson.D{})
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 
 	defer cur.Close(ctx)
@@ -31,7 +31,7 @@ func ReceiveWish(c *fiber.Ctx) error {
 		var wish models.Wishy
 		err := cur.Decode(&wish)
 		if err != nil {
-			panic(err)
+			fmt.Println(err)
 		}
 		wishs = append(wishs, wish)
 	}
