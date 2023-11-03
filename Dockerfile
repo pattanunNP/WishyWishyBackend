@@ -1,19 +1,19 @@
 FROM golang:alpine AS build
 
-WORKDIR /src/app
+WORKDIR /app
 COPY . .
 
 ENV GO111MODULE=on
 
 RUN go mod download
 
-RUN go build -o server ./src/main.go
+RUN go build -o server ./main.go
 
 FROM golang:alpine AS server
 
 WORKDIR /app
 
-COPY --from=build /src/app .
+COPY --from=build /app .
 # COPY --from=build /src/app/server .
 EXPOSE 8080 443
 
